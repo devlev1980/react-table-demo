@@ -15,6 +15,10 @@ td, th {
     padding: 8px;
 
 }
+th span{
+    display: inline-block;
+    margin-left: 1rem;
+}
 tr{
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
