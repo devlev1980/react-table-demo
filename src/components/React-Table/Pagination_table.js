@@ -29,11 +29,12 @@ const PaginationTable = () => {
         state,
         gotoPage,
         pageCount,
+        setPageSize,
         prepareRow
     } = tableInstance;
 
 
-    const {pageIndex} = state;
+    const {pageIndex,pageSize} = state;
     return (
         <div>
             <table {...getTableProps()}>
@@ -73,6 +74,13 @@ const PaginationTable = () => {
                 Page {' '}
                 <strong> {pageIndex + 1} of {pageOptions.length}</strong> {' '}
             </span>
+            <select name="" id="" value={pageSize} onChange={(e)=> setPageSize(e.target.value)}>
+                {
+                    [10,25,50].map(pageSize=> (
+                        <option key={pageSize} value={pageSize}>Show {pageSize}</option>
+                    ))
+                }
+            </select>
             <span className="actions">
                 <span>
                     <input type="number"
