@@ -1,19 +1,27 @@
 import React, {useMemo} from 'react';
-import {useTable,useFilters,useGlobalFilter,useSortBy} from 'react-table';
+import {useTable, useFilters, useGlobalFilter, useSortBy} from 'react-table';
 import MOCK_DATA_2 from './MOCK_DATA_2.json';
 import {COLUMNS} from './Columns';
 import './basic_table.css';
 import './column_filter.css'
+import './global_filter_input.css'
 import GlobalFilterInput from "./Global_Filter_Input";
+import ColumnFilter from "./Column_Filtering_Input";
 
 
 const ColumnFilteringTable = () => {
     const columns = useMemo(() => COLUMNS, []);
     const data = useMemo(() => MOCK_DATA_2, []);
+    const defaultColumn = useMemo(()=> {
+        return {
+            Filter: ColumnFilter
+        }
+    },[])
     const tableInstance = useTable({
         columns: columns,
-        data: data
-    },useFilters,useGlobalFilter,useSortBy);
+        data: data,
+        defaultColumn: defaultColumn
+    }, useFilters, useGlobalFilter, useSortBy);
 
     const {
         getTableProps,
@@ -24,23 +32,23 @@ const ColumnFilteringTable = () => {
         setGlobalFilter,
         rows,
         state,
-        prepareRow} = tableInstance;
+        prepareRow
+    } = tableInstance;
 
-    const {globalFilter } = state;
+    const {globalFilter} = state;
     return (
         <>
-                     {/*<GlobalFilterInput searchTerm={globalFilter} setFilter={setGlobalFilter}/>*/}
-
+            <GlobalFilterInput searchTerm={globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()}>
                 <thead>
-                {headerGroups.map(group=> (
+                {headerGroups.map(group => (
                     <tr {...group.getHeaderGroupProps()}>
-                        {group.headers.map((column)=>
+                        {group.headers.map((column) =>
                             <th {...column.getHeaderProps(column.getSortByToggleProps)}>
                                 {column.render('Header')}
-                                <div>{column.canFilter ? column.render('Filter'): null}</div>
+                                <div>{column.canFilter ? column.render('Filter') : null}</div>
                                 <span>
-                                    {column.isSorted? (column.isSortedDesc? '⬇️': '⬆️'): ''}
+                                    {column.isSorted ? (column.isSortedDesc ? '⬇️' : '⬆️') : ''}
                                 </span>
                             </th>
                         )}
@@ -49,11 +57,11 @@ const ColumnFilteringTable = () => {
 
                 </thead>
                 <tbody {...getTableBodyProps()}>
-                {rows.map((row)=>{
+                {rows.map((row) => {
                     prepareRow(row);
                     return (
                         <tr {...row.getRowProps()}>
-                            {row.cells.map((cell)=> {
+                            {row.cells.map((cell) => {
                                 return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                             })}
                         </tr>
