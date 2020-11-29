@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "first_name": "Sasha",
+    "last_name": "Newis",
+    "email": "snewis0@umich.edu",
+    "date_of_birth": "8/25/2018"
+  },
+  {
+    "id": 2,
+    "first_name": "Jamison",
+    "last_name": "Parrish",
+    "email": "jparrish1@pagesperso-orange.fr",
+    "date_of_birth": "3/8/2018"
+  },
+  {
+    "id": 3,
+    "first_name": "Aarika",
+    "last_name": "Koppen",
+    "email": "akoppen2@barnesandnoble.com",
+    "date_of_birth": "4/27/2018"
+  },
+  {
+    "id": 4,
+    "first_name": "Minta",
+    "last_name": "Pietron",
+    "email": "mpietron3@zdnet.com",
+    "date_of_birth": "7/15/2019"
+  },
+  {
+    "id": 5,
+    "first_name": "Abra",
+    "last_name": "Dorrance",
+    "email": "adorrance4@cbslocal.com",
+    "date_of_birth": "7/3/2018"
+  },
+  {
+    "id": 6,
+    "first_name": "Marshall",
+    "last_name": "Dangl",
+    "email": "mdangl5@ucoz.com",
+    "date_of_birth": "2/4/2019"
+  },
+  {
+    "id": 7,
+    "first_name": "Dimitri",
+    "last_name": "Heak",
+    "email": "dheak6@blogspot.com",
+    "date_of_birth": "1/26/2018"
+  },
+  {
+    "id": 8,
+    "first_name": "Berry",
+    "last_name": "Jenkinson",
+    "email": "bjenkinson7@google.com.br",
+    "date_of_birth": "6/9/2018"
+  },
+  {
+    "id": 9,
+    "first_name": "Malvin",
+    "last_name": "Gainforth",
+    "email": "mgainforth8@biglobe.ne.jp",
+    "date_of_birth": "8/15/2018"
+  },
+  {
+    "id": 10,
+    "first_name": "Rodger",
+    "last_name": "Clout",
+    "email": "rclout9@ibm.com",
+    "date_of_birth": "12/28/2019"
+  }
+]
